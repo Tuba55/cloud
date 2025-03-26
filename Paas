@@ -1,0 +1,75 @@
+pip install paho-mqtt
+# Step 2: Set Up Your Working folder named
+Practical
+in cmd change directory where folder created (cd Practical)
+
+
+----Create two files in ide publisher.py subscriber.py-----
+-------------# Step 3: Write the Code for Publisher (publisher.py)---------------
+import paho.mqtt.client as mqtt
+import json
+import time
+import random
+
+# Free Cloud MQTT Broker (HiveMQ)
+MQTT_BROKER = "broker.hivemq.com"
+MQTT_PORT = 1883
+MQTT_TOPIC = "iot/mobile/sensor"
+
+# Function to simulate sensor data
+def get_sensor_data():
+    return {
+        "device_id": "mobile_001",
+        "timestamp": time.time(),
+        "gps": {
+            "latitude": round(random.uniform(-90.0, 90.0), 6),
+            "longitude": round(random.uniform(-180.0, 180.0), 6)
+        },
+        "temperature": round(random.uniform(20.0, 40.0), 2)
+    }
+
+# Setup MQTT client
+client = mqtt.Client()
+client.connect(MQTT_BROKER, MQTT_PORT, 60)
+
+# Publish sensor data every 5 seconds
+try:
+    while True:
+        data = get_sensor_data()
+        payload = json.dumps(data)
+        client.publish(MQTT_TOPIC, payload)
+        print(f"Published: {payload}")
+        time.sleep(5)
+except KeyboardInterrupt:
+    print("Stopping Publisher")
+    client.disconnect()
+    
+------# Step 4: Write the Code for Subscriber (subscriber.py)----------
+import paho.mqtt.client as mqtt
+
+# Free Cloud MQTT Broker
+MQTT_BROKER = "broker.hivemq.com"
+MQTT_TOPIC = "iot/mobile/sensor"
+
+# Callback function when a message is received
+def on_message(client, userdata, msg):
+    print(f"Received: {msg.payload.decode()}")
+
+# Setup MQTT Client
+client = mqtt.Client()
+client.on_message = on_message
+client.connect(MQTT_BROKER, 1883, 60)
+client.subscribe(MQTT_TOPIC)
+
+print("Waiting for messages...")
+client.loop_forever()
+
+
+---# Step 5: Run the Practical---
+# Running the Publisher
+cd path/to/MQTT_Practical
+python publisher.py
+
+# Running the Subscriber
+cd path/to/MQTT_Practical
+python subscriber.py
