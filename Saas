@@ -1,0 +1,30 @@
+https://www.dropbox.com/developers/apps/create
+select Scoped Access
+Full Dropbox
+generate access token
+
+---go to permissions----
+set write and read
+click on submit
+
+ ----the key-------
+the key is :sl.u.AFlG9il8IynvokcVq1wKXt2GD7PDbmcrqH5bV4xa48lRhqsInzgd8W_RksrPvXNqdxBon1EeQKCNUW6lOTd7ZgZ9imccTqp66o9cMTfvAIacJn-UqN_67LUgb08ihxB0Z4VdN82IUYBxW9iNhk-aZ71wcd_Lh-_nvgFKY4nEusiX9mLLeBUZaHiGzv_7zyb0O4j_QfwIdBrW-2EDLW-h2Da2brrfQnY6jvf89f3sZEwEnPgVaV9tSUMGuKhedjiXpqzCwNR6p_Xhy5PmVr3slY9m0nHgXJhOXcuPzE6aj0kw3hqzTaVR3A1xcIw1JCj81hyYq-dmx1S-za-wuSnqCyOdoJI2R2pfQ05B7RCy_ylg7WXzDlOXPM67pTv7sVU5cUHqJQplUBAsl6UtJkhVF1ABkzSbOkqwD9d3blsghM3RTEmIXrXPRFO7kZTFuvn8pdRStm6995pLJ-lMcrRji2FwFbfcqNvyg1OLp7mG4itjaVdKpfPOzt0_gr8o79e22v2Pq8KTKcVUHKfMB27O-A9RkSnJvBOpL7Cls9lZoMCfa85wjmF0LMuZLvjPG1Ls09O2oigbxg77N5e0rkpLXQ82wCg5KNt4vui51qPvWbU99uNBNlV6u2X7-YZg_qylbDNKltVLFiEiXAzeCjNWyUU4yvEPYLHaJ6oTWlMxqmKHamGYGczndibZRssuxKVIAfY2Yg6xYc_dKnuUjwLF4FTS4ktWjAmDFMUcX0zwGnGzkiRzYv8iEDy9GWlUgehfqSN33KNasS2iaad6NFh8UJkaiz4JM9IJ9S1EavXINWZe9ZhhuzqSfrLTcuj2QpbeSJNatfXQ5oWBUoKj_zQy9F8jDwb9lTzOesWZqd0QE2l-8mQ45yutqfU7IaNhHO61PXv5C3CXSJUAjT2908uRcT7fLXmMAhLkCPWJGbItu-c7-Y7N9LosgODV_JHueoveLAkXPZcudw2o5IoYPYD7mbeR-cZCzhHk5FTy8TcWnzgkrY44bnTnq-5kMRBGKePLAPGcYSZP5qKYQ21yPaHdYdcsdkYh7SP2FaYgiycs5TrDCET5cm7UBrHuuixqe7jUjXb2nm3xtiVwG5SNfIKD1tuHikw8mNg0CmzHXtQS4qRoRig0w0ia24-aXv90DtVTl5r6gOsNHTW7regDF4hNo3vxbkRNwdrX8KI9bjFAxv9vfMPXtXTZ_ZidETGr_xd3YZoLGiCT_yRhlCI4s0gJo_jppyb7Cz7SzK6JqL8v1249tzJnZB0YJ0Jqv78jzqXeBLS-HI8Ch5uDn58EjP3dYGqXu5MdNmMvWEqgqWjjIJm4aBkx-8Sqm-IiYjxF77nU10QrfQaXC63OW_85ICPK49wLsZmZiW9nxmHL53lL5aCdIgj1gZXbNd2AdIFa6pG-vLoGdv8GzPyt8T0YAJFc8o5gNP2p9frh1ZbRZXC2wW6LlKEy4QfvD0wXXQWOYXiFn3M
+
+
+---write code in python --- idle 
+# Importing necessary libraries
+import dropbox
+
+# Establish connection
+def connect_to_dropbox():
+    try:
+        TOKEN = "your_access_token_here"  # Replace with your actual token securely
+        dbx = dropbox.Dropbox(TOKEN)
+        print('Connected to Dropbox successfully')
+        return dbx
+    except Exception as e:
+        print(str(e))
+        return None
+
+dbx = connect_to_dropbox()
+
