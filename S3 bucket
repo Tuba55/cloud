@@ -1,0 +1,29 @@
+search S3
+click on s3
+------------------
+creat bucket
+bucket name(unique name)
+uncheck "block all public access"
+create bucket
+successfully created
+------------------
+click on created bucket name
+go to "properties" tab  & Scroll down till static website hosting (Enable  then write index.html & save changes)
+go to permissions tab: bucket policy : click Edit
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Principal": "*",
+			"Effect": "Allow",
+			"Action": [
+			    "s3:*"
+			    ],
+			    "Resource":"arn:aws:s3:::tubbaa/*"
+		}
+	]
+}
+-----Save changes-------
+Go to object tab & upload
+upload index.html file
