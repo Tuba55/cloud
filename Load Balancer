@@ -5,6 +5,17 @@ create a key pair
 click on launch instances
 --------------
 go to side find target group
+Click Create Target Group. 
+3.  Target Type: Instances. 
+4.  Protocol: HTTP. 
+5.  Port: 80. 
+6.  Health Check Path: /. 
 create group
-go to side load balncer
-choose 1st application click create
+-----
+go to side load balancer
+create load balancer
+choose 1st application load balancer click create
+select two instances 
+Click Include as pending below. 
+Click Create Target Group. 
+
