@@ -1,0 +1,10 @@
+search Ec2
+launch instances 
+number of instances =2
+create a key pair
+click on launch instances
+--------------
+go to side find target group
+create group
+go to side load balncer
+choose 1st application click create
