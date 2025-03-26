@@ -67,7 +67,7 @@ client.loop_forever()
 
 ---# Step 5: Run the Practical---
 # Running the Publisher
-cd path/to/MQTT_Practical
+cd where practical folder is
 python publisher.py
 
 # Running the Subscriber
