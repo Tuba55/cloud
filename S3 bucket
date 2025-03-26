@@ -26,4 +26,95 @@ go to permissions tab: bucket policy : click Edit
 }
 -----Save changes-------
 Go to object tab & upload
+-------------------
 upload index.html file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 50px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Web Page</h1>
+    <p>This is a simple static web page.</p>
+    <button onclick="showMessage()">Click Me!</button>
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = "Hello! You clicked the button.";
+        }
+    </script>
+
+</body>
+</html>
+--------------
+error.html
+-----------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8d7da;
+            color: #721c24;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>404</h1>
+    <p>Oops! The page you are looking for does not exist.</p>
+    <a href="index.html">Go Back Home</a>
+
+</body>
+</html>
+
