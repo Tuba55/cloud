@@ -1,1 +1,10 @@
-
+search ec2 - launch instance - enter name of instance- create a new key pair- number of instances=1 click lanuch instances
+--------------
+right click on instance-create image-give name-- create image
+----
+navigate to AMIs on left panel-- you will see the image created- wait untill status is done
+right click on AMI ---select copy AMI--Chosse the region-click copy ami
+-------
+go to AMIs on copied image right click and - select launch instance
+----
+terminate instance and AMI
